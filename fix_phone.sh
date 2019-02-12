@@ -1,7 +1,15 @@
 #!/bin/bash
 
+function check_installed() {
+        if [ -z "$(which ${1})" ] && [ ! -f "/bin/${1}" ]; then
+                echo "FATAL ERROR: ${1^} executable not found."; exit
+        fi
+}
+
+
 echo "UK SeLinux Denial Fixer"
 echo "PRESS ENTER TO CONTINUE"
+check_installed su ; check_installed python3
 read
 su -c logcat *:E -d | grep denied > sedenials
 python3 policy.py > denials

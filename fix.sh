@@ -1,5 +1,11 @@
 #!/bin/bash
 
+function check_installed() {
+	if [ -z "$(which ${1})" ] && [ ! -f "/bin/${1}" ]; then
+    		echo "FATAL ERROR: ${1^} executable not found."; exit
+	fi
+}
+
 echo "UK SeLinux Denial Fixer"
 echo "CONNECT YOUR PHONE TO YOUR PC AND PRESS ENTER"
 read
