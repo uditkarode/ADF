@@ -26,6 +26,6 @@ echo "PRESS ENTER TO CONTINUE"
 read
 cd /system/SeFix
 su -c ./helper.sh
-su -c logcat -c
+su -c logcat -c > /dev/null
 su -c supolicy --save /system/SAVED_POLICIES
 echo "Policies have been saved in /system/SAVED_POLICIES"
