@@ -1,4 +1,3 @@
-
 function check_installed() {
         if [ -z "$(which ${1})" ] && [ ! -f "/bin/${1}" ]; then
                 echo "FATAL ERROR: ${1^} executable not found."; exit
@@ -10,6 +9,11 @@ check_installed supolicy
 
 counter=1
 lines=$(wc -l denials)
+
+if [ -z "$(cat denials)" ]; do
+	echo "No denials to fix"
+	exit
+done
 
 cat denials | while read line; do
 	eval $line
