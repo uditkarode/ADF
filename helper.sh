@@ -9,7 +9,7 @@ function check_installed() {
 check_installed supolicy
 
 counter=1
-lines=$(wc -l coms)
+lines=$(wc -l denials)
 
 cat denials | while read line; do
 	eval $line
