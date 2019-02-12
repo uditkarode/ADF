@@ -1,9 +1,9 @@
 counter=1
 lines=$(wc -l coms)
 
-cat coms | while read line; do
+cat denials | while read line; do
 	eval $line
-	echo "$counter / $lines denials patched."
+	echo "$counter / $lines patched."
 	(( counter++ ))
 	echo
 	echo " --------------- "

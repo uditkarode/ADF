@@ -4,16 +4,16 @@ echo "UK SeLinux Denial Fixer"
 echo "CONNECT YOUR PHONE TO YOUR PC AND PRESS ENTER"
 read
 adb logcat *:E -d | grep denied > sedenials
-python3 policy.py > coms
+python3 policy.py > denials
 adb shell su -c mount -o rw,remount /system
 adb shell su -c rm -rf /system/SeFix
 adb shell su -c mkdir /system/SeFix
 adb push helper.sh /sdcard/___HSH_
-adb push coms /sdcard/___COMS_
+adb push coms /sdcard/___DENS_
 adb shell su -c mv /sdcard/___HSH_ /system/SeFix/helper.sh
-adb shell su -c mv /sdcard/___COMS_ /system/SeFix/coms
+adb shell su -c mv /sdcard/___DENS_ /system/SeFix/denials
 adb shell su -c chmod a+x /system/SeFix/helper.sh
-rm sedenials coms
+rm sedenials denials
 
 echo
 echo "NOW EXECUTE THESE COMMANDS ON A TERMINAL EMULATOR ON YOUR PHONE:"
