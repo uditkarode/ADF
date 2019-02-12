@@ -10,10 +10,10 @@ check_installed supolicy
 counter=1
 lines=$(wc -l denials)
 
-if [ -z "$(cat denials)" ]; do
+if [ -z "$(cat denials)" ]; then
 	echo "No denials to fix"
 	exit
-done
+fi
 
 cat denials | while read line; do
 	eval $line
