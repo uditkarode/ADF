@@ -19,13 +19,14 @@ su -c mkdir /system/SeFix
 su -c cp helper.sh /system/SeFix/helper.sh
 su -c cp denials /system/SeFix/denials
 su -c chmod a+x /system/SeFix/helper.sh
-rm sedenials denials
 echo
 echo "THE PROCESS SHOULD START AND MAY TAKE AS LONG AS 1-2 HOURS."
 echo "PRESS ENTER TO CONTINUE"
 read
 cd /system/SeFix
 su -c ./helper.sh
-su -c logcat -c > /dev/null
-su -c supolicy --save /system/SAVED_POLICIES
-echo "Policies have been saved in /system/SAVED_POLICIES"
+if [ ! -z "$(cat denials)" ]; then
+	su -c logcat -c > /dev/null
+	su -c supolicy --save /system/SAVED_POLICIES
+	echo "Policies have been saved in /system/SAVED_POLICIES"
+fi
