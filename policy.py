@@ -28,7 +28,7 @@ for line in content:
 		permission = result.group(1).split("}")[0]
 	else: continue
 
-	final_command = "magiskpolicy --live \"\\\"\\\"allow " + offender + " " +  context + " " + sclass + " " + permission + "\\\"\\\"\""
+	final_command = "supolicy --live \"\\\"\\\"allow " + offender + " " +  context + " " + sclass + " " + permission + "\\\"\\\"\""
 
 	if final_command not in commands:
 		commands.append(final_command)

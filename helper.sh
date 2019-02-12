@@ -6,7 +6,7 @@ function check_installed() {
 }
 
 
-check_installed magiskpolicy
+check_installed supolicy
 
 counter=1
 lines=$(wc -l coms)
