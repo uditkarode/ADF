@@ -7,6 +7,7 @@ function check_installed() {
 }
 
 echo "UK SeLinux Denial Fixer"
+check_installed python3 ; check_installed adb
 echo "CONNECT YOUR PHONE TO YOUR PC AND PRESS ENTER"
 read
 adb logcat *:E -d | grep denied > sedenials
