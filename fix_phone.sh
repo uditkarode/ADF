@@ -26,3 +26,4 @@ echo "PRESS ENTER TO CONTINUE"
 read
 cd /system/SeFix
 su -c ./helper.sh
+su -c logcat -c
