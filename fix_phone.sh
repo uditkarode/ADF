@@ -25,4 +25,4 @@ echo "THE PROCESS SHOULD START AND MAY TAKE AS LONG AS 1-2 HOURS."
 echo "PRESS ENTER TO CONTINUE"
 read
 cd /system/SeFix
-./helper.sh
+su -c ./helper.sh
